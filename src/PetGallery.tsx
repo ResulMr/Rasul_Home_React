@@ -5,6 +5,10 @@ const PetGallery: React.FC = () => {
   const [images, setImages] = useState<string[]>([]);
   const [isDog, setIsDog] = useState<boolean>(false);  
 
+
+
+
+  
   const fetchDogImages = async () => {
     const response = await fetch('https://dog.ceo/api/breeds/image/random/6');
     const data = await response.json();
@@ -21,8 +25,8 @@ const PetGallery: React.FC = () => {
   };
 
   return (
-    <Box textAlign="center" p={5}>
-      <Text fontSize="3xl" fontWeight="bold" mb={6}>Pet Gallery</Text>
+    <Box textAlign="center"  p={5}>
+      <Text fontSize="3xl" color={'white'} fontWeight="bold" mb={6}>Pet Gallery</Text>
 
   
       <Grid templateColumns="repeat(3, 1fr)" gap={6}>
@@ -32,12 +36,12 @@ const PetGallery: React.FC = () => {
       </Grid>
 
   
-      <Button colorScheme="teal" size="lg" onClick={fetchDogImages} mt={4} disabled={isDog}>
+      <Button colorScheme="teal" size="lg" onClick={fetchDogImages} mt={4} >
         Show Dogs
       </Button>
 
    
-      <Button colorScheme="teal" size="lg" onClick={fetchCatImages} mt={4} disabled={!isDog}>
+      <Button colorScheme="teal" size="lg" onClick={fetchCatImages} mt={4} >
         Show Cats
       </Button>
     </Box>
